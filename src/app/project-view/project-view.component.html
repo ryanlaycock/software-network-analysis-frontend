@@ -1,0 +1,10 @@
+<app-header [ownerName]="ownerName" [repoName]="repoName"></app-header>
+<div class="basic-container">
+  <div class="details-row">
+    <app-project-details class="detail-card-box" [projectMetrics]="projectMetrics" [ownerName]="ownerName" [repoName]="repoName"></app-project-details>
+    <app-artifact-details class="detail-card-box" [artifactProjectMetrics]="artifactMetrics['ProjectStats']" [ownerName]="ownerName" [repoName]="repoName"></app-artifact-details>
+  </div>
+  <app-artifact-components *ngIf="artifactMetrics" [artifactMetrics]="artifactMetrics"></app-artifact-components>
+  <app-project-components *ngIf="projectMetrics" [projectMetrics]="projectMetrics"></app-project-components>
+</div>
+

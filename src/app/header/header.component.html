@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <div id="left" (click)="redirectHome()">
+    Software Network Analysis
+  </div>
+  <div id="right" *ngIf="this.ownerName && this.repoName">
+    {{this.ownerName}}/{{this.repoName}}
+  </div>
+</mat-toolbar>
