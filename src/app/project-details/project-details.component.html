@@ -1,14 +1,17 @@
-<mat-card *ngIf="projectMetrics" id="projectDetails">
+<mat-card id="projectDetails">
   <mat-card-header>
     <mat-card-title>Project Analysis</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <h3>Project Complexity</h3>
-    <p><strong>{{projectMetrics["Project"]["network_comp"]}}</strong> overall network complexity.
-<!--      Higher values mean there are a lot of dependencies between internal and external software components, increasing the risk of defects. This metric correlates with the number of defects in software projects.</p>-->
-    <h3>Code Churn</h3>
-    <p><strong>{{projectMetrics["Project"]["code_churn"]}}</strong> lines of codes added and deleted per week.
-<!--      The higher this value, the more frequently code is changed and therefore dependent projects must be kept up to date to avoid version conflicts. Lower values mean bug and security fixes are less likely.</p>-->
+    <div *ngIf="!!projectMetrics">
+      <h3>Project Complexity</h3>
+      <p><strong>{{projectMetrics["Project"]["network_comp"]}}</strong> overall network complexity. {{projectMetrics["Project"]["network_comp_msg"]}}</p>
+      <h3>Code Churn</h3>
+      <p><strong>{{projectMetrics["Project"]["code_churn"]}}</strong> lines of codes added and deleted per week. {{projectMetrics["Project"]["code_churn_msg"]}}</p>
+    </div>
+    <div *ngIf="!!projectErrorMsg">
+      <p>{{projectErrorMsg}}</p>
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <button color="primary" mat-raised-button (click)="this.openGitHub()">View on GitHub</button>

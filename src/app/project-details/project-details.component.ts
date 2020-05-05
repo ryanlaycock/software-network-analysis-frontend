@@ -8,13 +8,13 @@ import {ProjectService} from '../project.service';
 })
 export class ProjectDetailsComponent implements OnInit {
   @Input() projectMetrics: any;
+  @Input() projectErrorMsg: string;
   @Input() ownerName: string;
   @Input() repoName: string;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   openGitHub(): void {
     window.open('https://github.com/' + this.ownerName + '/' + this.repoName);

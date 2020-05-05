@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
-import {Observable, of} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import {Observable, of, throwError} from 'rxjs';
+import {catchError, takeUntil, takeWhile} from 'rxjs/operators';
 import {environment} from '../environments/environment';
 
 @Injectable({
@@ -49,6 +49,8 @@ export class ProjectService {
         console.log('Wrong username or password.');
       } else if (error.status === 404) {
         console.log('Not found.');
+        return of(error as T);
+        // return throwError(error);
       } else {
         if (!!error.error) {
           for (const key in error.error.messages) {

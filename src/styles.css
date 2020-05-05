@@ -49,7 +49,7 @@ mat-toolbar {
 }
 
 .detail-card-box mat-card-content {
-  height: 150px;
+  height: 200px;
   padding-left: 20px;
 }
 
@@ -60,4 +60,10 @@ mat-toolbar {
 
 #searchCard mat-card-content {
   padding-left: 20px;
+  font-size: 20px;
+}
+
+#searchCard mat-form-field {
+  padding-left: 15px;
+  padding-right: 15px;
 }

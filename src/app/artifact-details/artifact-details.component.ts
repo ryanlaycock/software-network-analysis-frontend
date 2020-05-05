@@ -8,6 +8,7 @@ import {ProjectService} from '../project.service';
 })
 export class ArtifactDetailsComponent implements OnInit {
   @Input() artifactProjectMetrics: any;
+  @Input() artifactErrorMsg: string;
   @Input() ownerName: string;
   @Input() repoName: string;
 
@@ -16,6 +17,7 @@ export class ArtifactDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log("ERRROORRR" + this.artifactErrorMsg);
   }
 
 }

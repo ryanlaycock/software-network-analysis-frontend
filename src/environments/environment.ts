@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  snaUrl: 'http://localhost:8080',
+  snaUrl: 'http://localhost:5502',
 };
 
 /*
