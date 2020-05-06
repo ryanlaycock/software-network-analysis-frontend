@@ -1,0 +1,19 @@
+<mat-card *ngIf="projectMetrics">
+  <mat-card-header>
+    <mat-card-title>Project Components</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-tab-group>
+      <mat-tab label="Packages">
+        <app-project-component-table [typeMetrics]="projectMetrics.Package"></app-project-component-table>
+      </mat-tab>
+      <mat-tab label="Classes">
+        <app-project-component-table [typeMetrics]="projectMetrics.ClassOrInterface"></app-project-component-table>
+      </mat-tab>
+      <mat-tab label="Methods">
+        <app-project-component-table [typeMetrics]="projectMetrics.Method"></app-project-component-table>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
+
