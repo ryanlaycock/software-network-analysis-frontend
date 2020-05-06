@@ -1,0 +1,22 @@
+<mat-card id="artifactDetails">
+  <mat-card-header>
+    <mat-card-title>Dependency Analysis</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="!!artifactProjectMetrics">
+      <h3>Project Importance</h3>
+      <p>This project contains the <strong>{{projectService.getOrdinalSuffix(artifactProjectMetrics['ProjectStats']["max_rank"])}}</strong> most important Artifact in the analysed network.</p>
+      <h3>Dependencies</h3>
+      <p>This project depends directly on <strong>{{artifactProjectMetrics['ProjectStats']["num_of_direct_dependencies"]}}</strong> artifacts, and <strong>{{artifactProjectMetrics['ProjectStats']["num_of_transitive_dependencies"]}}</strong> transitive artifacts.</p>
+      <h3>Dependents</h3>
+      <p>This project is used by <strong>{{artifactProjectMetrics['ProjectStats']["num_of_dependents"]}}</strong> artifacts.<p>
+    </div>
+    <div *ngIf="!!artifactErrorMsg">
+      <p>{{artifactErrorMsg}}</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+
+  </mat-card-actions>
+</mat-card>
+

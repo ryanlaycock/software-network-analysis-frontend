@@ -1,0 +1,21 @@
+<mat-card *ngIf="artifactMetrics">
+  <mat-card-header>
+    <mat-card-title>Project Dependencies</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+  <mat-tab-group>
+    <mat-tab label="Project Artifacts">
+      <app-artifact-component-table [typeMetrics]="artifactMetrics.Artifact"></app-artifact-component-table>
+    </mat-tab>
+    <mat-tab label="Direct Dependencies">
+      <app-artifact-component-table [typeMetrics]="artifactMetrics.DirectDependency"></app-artifact-component-table>
+    </mat-tab>
+    <mat-tab label="Transitive Dependencies">
+      <app-artifact-component-table [typeMetrics]="artifactMetrics.TransitiveDependency"></app-artifact-component-table>
+    </mat-tab>
+    <mat-tab label="Dependent Artifacts">
+      <app-artifact-component-table [typeMetrics]="artifactMetrics.Dependent"></app-artifact-component-table>
+    </mat-tab>
+  </mat-tab-group>
+  </mat-card-content>
+</mat-card>
